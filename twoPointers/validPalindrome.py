@@ -2,11 +2,25 @@ def validPalindrome(s):
     s = s.upper()
     l = 0
     r = len(s) - 1
-    while l == r:
-        if 
+
+    while l != r:
+        if not s[l].isalnum():
+            l += 1
+            continue
+        if not s[r].isalnum():
+            r -= 1
+            continue
+        if s[l] != s[r]:
+            return False
+        l += 1
+        r -= 1
+    
+    return True
+
+        
 
 
         
 
-phrase = "Thiago Medeiros"
+phrase = "Was it a car or a cat I saw?"
 print(validPalindrome(phrase))
