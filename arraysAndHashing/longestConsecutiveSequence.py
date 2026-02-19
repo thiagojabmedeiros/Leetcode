@@ -1,18 +1,17 @@
 def longestConsecutiveSequence(nums):
-    seen = {}
+    num_set = set(nums)
     sequence = 0
-    for i in range(len(nums)):
-        seen[nums[i]] = seen.get(nums[i], 0) + 1
-        
-    for i in range(len(nums)):
-        if (nums[i] + 1) in seen:
-            sequence += 1
-        elif seen != {}:
-            sequence = 1
-        
 
-    print(seen)
- 
+    for i in num_set:
+        if (i - 1) not in num_set:
+            length = 1
+            current = i
+            while current + 1 in num_set:
+                current += 1
+                length += 1
+            sequence = max(sequence, length)
+    return sequence
+
 
 numsx = [0,3,2,5,4,6,1,1]
-longestConsecutiveSequence(numsx)
+print(longestConsecutiveSequence(numsx))
