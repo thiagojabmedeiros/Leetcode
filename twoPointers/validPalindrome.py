@@ -1,12 +1,12 @@
 def validPalindrome(s):
-    symbolList = ["","°"," ",",", "!", "#", "$", "@", ";", "%", "¨", "&", "*", "(", ")", "-", "+", "-", "?", "'", ".", ":", ";", ">", "<", "/", "|", "=", "º"]
-    for i in range(len(s)):
-        if s[i] in symbolList:
-            s = s.replace(s[i], "")
-        s = s.lower()
-    
-    return s == s[::-1]
+    s = s.upper()
+    l = 0
+    r = len(s) - 1
+    while l == r:
+        if 
+
+
         
 
-phrase = "aA"
+phrase = "Thiago Medeiros"
 print(validPalindrome(phrase))

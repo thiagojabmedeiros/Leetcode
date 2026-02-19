@@ -11,7 +11,7 @@ def longestCommonPrefix(strs):
         if v == len(strs):
             res.append([v, k])
     res.sort()
-    print(res[-1][1])
+    return res[-1][1]
 
 names = ["best", "bester", "boter", "bant", "black"]
 print(longestCommonPrefix(names))
