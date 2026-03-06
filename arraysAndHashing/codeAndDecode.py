@@ -1,26 +1,25 @@
-def encode(strs):
+def encode(arr):
     res = ""
-    for x in strs:
-        res += f"{len(x)}" + x + "#"
+    for word in arr:
+        res += str(len(word)) + "#" + word
     return res
 
-def decode(str):
-    size = []
+def decode(s):
     res = []
-    i = 1
-    for sz in str:
-        if sz.isnumeric():
-            size.append(int(sz))
-    while len(res) < len(size):
-        for sz in size:
-            res.append(str[i:i + sz])
-            i += sz + 2
+    i = 0
+    while i < len(s):
+        j = i
+        while s[j] != "#":
+            j += 1
+        sz = int(s[i:j])
+        res.append(s[j+1:j+1+sz])
+        i = j + 1 + sz
     return res
-
-    
-strList = ["banana","cat","barbecue","shoes","christmas","australia", "boat"]
+                  
+        
+strList = ["banana","cat","barbecue","shoes","christmas","australia banana pancakes", "boat"]
 strx = encode(strList)
-decode(strx)
+print(decode(strx))
 
 
 
