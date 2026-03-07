@@ -1,18 +1,14 @@
 def topKFrequentElements(nums, k):
-    count = {}
+    seen = {}
+    freq, res = [], []
     for key in nums:
-        count[key] = count.get(key, 0) + 1
-    
-    freq = []
-    for key, value in count.items():
+        seen[key] = seen.get(key, 0) + 1
+    for key, value in seen.items():
         freq.append([value, key])
     freq.sort()
-
-    res = []
-    while len(res) < k:
-        res.append(freq.pop()[1])
+    for i in freq[-k:]:
+        res.append(i[1])
     return res
 
-
-numsx = [10,55,55,22,22,22]
-print(topKFrequentElements(numsx, 2))
+numsx = [10,55,55,22,22,22,33,33,33]
+print(topKFrequentElements(numsx, 1))

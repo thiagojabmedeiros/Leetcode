@@ -6,7 +6,7 @@ def longestCommonPrefix(strs):
             prefix += x
             seen[prefix] = seen.get(prefix, 0) + 1
     
-    res = []
+    res = [[0, ""]]
     for k, v in seen.items():
         if v == len(strs):
             res.append([v, k])

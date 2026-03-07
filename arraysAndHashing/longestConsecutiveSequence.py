@@ -3,11 +3,11 @@ def longestsequence(nums):
     num_set = set(nums)
     longest = 0
     for n in num_set:
-        if n - 1 not in num_set:
-            length = 1
-            while n + length in num_set:
-                length += 1
-            longest = max(longest, length)
+        if not n - 1 in num_set:
+            size = 1
+            while n + size in num_set:
+                size += 1
+        longest = max(longest, size)
     return longest
 
 numsx = [2,20,4,10,3,4,5]

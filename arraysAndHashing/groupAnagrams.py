@@ -1,12 +1,15 @@
 def groupAnagrams(strs):
     seen = {}
-    for value in range(len(strs)):
-        key = "".join(sorted(strs[value]))
+    res = []
+    for word in strs:
+        key = "".join(sorted(word))
         if key in seen:
-            seen[key].append(strs[value])
+            seen[key].append(word)
         else:
-            seen[key] = [strs[value]]
-    print(list(seen.values()))
+            seen[key] = [word]
+    for arr in seen.values():
+        res.append(arr)
+    return res
 
 strsx = ["act","pots","tops","cat","stop","hat"]
-groupAnagrams(strsx)
+print(groupAnagrams(strsx))
