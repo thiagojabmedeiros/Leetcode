@@ -1,8 +1,7 @@
 def validPalindrome(s):
-    s = s.upper()
+    s = s.lower().replace(" ", "")
     l, r = 0, len(s) - 1
-
-    while l != r:
+    while l < r:
         if not s[l].isalnum():
             l += 1
             continue
@@ -16,9 +15,7 @@ def validPalindrome(s):
         
         l += 1
         r -= 1
-    
     return True
-
         
 phrase = "Was it a car or a cat I saw?"
 print(validPalindrome(phrase))
