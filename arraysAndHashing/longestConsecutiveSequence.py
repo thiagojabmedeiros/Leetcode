@@ -1,12 +1,14 @@
 
 def longestsequence(nums):
-    snums = set(nums)
-    i = 0
-    print(snums)
-    while i < len(snums):
-        print(snums)
-        i+= 1
-    print(i)
+    num_set = set(nums)
+    longest = 0
+    for n in num_set:
+        if n - 1 not in num_set:
+            length = 1
+            while n + length in num_set:
+                length += 1
+            longest = max(longest, length)
+    return longest
 
 numsx = [2,20,4,10,3,4,5]
 print(longestsequence(numsx))
