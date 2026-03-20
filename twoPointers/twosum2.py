@@ -5,13 +5,10 @@ def twoSum2(nums, target):
             return [l+1, r+1]
         elif nums[l] + nums[r] > target:
             r -= 1
-            continue
         else:
-            l += 1
-            continue
+            l += 1    
     return []
 
 numbers = [1,2,3,4]
 targetx = 3
-
 print(twoSum2(numbers, targetx))
