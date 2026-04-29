@@ -1,6 +1,2 @@
-nums = [0, -1, 1 ,2]
-seen = {
-    1: "thiago",
-    2: "bruno"
-}
-print(set(nums))
+nums = [[1,2,3], [4,5,6], [7,8,9]]
+print([1,2,3] in nums)
